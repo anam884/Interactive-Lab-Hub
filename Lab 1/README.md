@@ -108,6 +108,9 @@ You will be using your smartphone as a stand-in for the device you are prototypi
 Code for the "Tinkerbelle" tool, and instructions for setting up the server and your phone are [here](https://github.com/FAR-Lab/tinkerbelle).
 
 We invented this tool for this lab! 
+
+If you run into technical issues with this tool, you can also use a light switch, dimmer, etc. that you can can manually or remotely control.
+
 **Give us feedback on Tinkerbelle.**
 
 ## Part D. Wizard the device
@@ -167,6 +170,7 @@ Do last week’s assignment again, but this time:
 2) You can use any modality (e.g., vibration, sound) to prototype the behaviors, 
 3) We will be grading with an emphasis on creativity. 
 
+<<<<<<< HEAD
 ## Part A. Plan 
 
 To stage the interaction with your interactive device, think about:
@@ -194,3 +198,6 @@ _Goals:_ Snappy is a smart, interactive photography assistant. It is a ring ligh
 ## Part E. Demo 
 
 [Final Demo](https://drive.google.com/file/d/1iRzJWbGqfex3OsPcskV9InqHpW0BHEVe/view?usp=sharing)
+=======
+**Document everything here. (Particularly we'd like to see the storyboard and video, although photos of the prototype are also great.)**
+>>>>>>> 0ce633de26dcd0b1b919d3671e4dff1ef76db371
