@@ -74,8 +74,8 @@ draw = ImageDraw.Draw(image)
 draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 disp.image(image)
 
-image1 = Image.open("gif1.gif")
-image2 = Image.open("gif1.gif")
+# image1 = Image.open("gif1.gif")
+# image2 = Image.open("gif1.gif")
 
 backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
@@ -106,19 +106,23 @@ def image_rescaling(image):
     print("here")
     return image
 
-face1 = image_rescaling(image1)
-face2 = image_rescaling(image2)
+# face1 = image_rescaling(image1)
+# face2 = image_rescaling(image2)
 # Display image.
 # disp.image(CTlogo)
 
 while True:
-    if buttonA.value and buttonB.value:
-        backlight.value = False  # turn off backlight
-    else:
-        backlight.value = True  # turn on backlight
-    if buttonB.value and not buttonA.value:  # just button A pressed
-        disp.image(face1) 
-    if buttonA.value and not buttonB.value:  # just button B pressed
-        disp.image(face2)  
-    if not buttonA.value and not buttonB.value:  # none pressed
-        disp.image(face1)   
+  for i in range(0, 3):
+            image = Image.open("{i}.png")
+            image_scale = image_rescaling(image)
+            disp.image(image_scale)
+#     if buttonA.value and buttonB.value:
+#         backlight.value = False  # turn off backlight
+#     else:
+#         backlight.value = True  # turn on backlight
+#     if buttonB.value and not buttonA.value:  # just button A pressed
+#         disp.image(face1) 
+#     if buttonA.value and not buttonB.value:  # just button B pressed
+#         disp.image(face2)  
+#     if not buttonA.value and not buttonB.value:  # none pressed
+#         disp.image(face1)   
