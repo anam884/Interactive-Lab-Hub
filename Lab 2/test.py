@@ -121,4 +121,4 @@ while True:
     if buttonA.value and not buttonB.value:  # just button B pressed
         disp.image(face2)  
     if not buttonA.value and not buttonB.value:  # none pressed
-        display.fill(color565(0, 0, 0))  
+        disp.image(face1)   
