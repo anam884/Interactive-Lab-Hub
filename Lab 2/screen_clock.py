@@ -49,13 +49,14 @@ padding = -2
 top = padding
 bottom = height - padding
 # Move left to right keeping track of the current x position for drawing shapes.
-x1 = right
-x2 = 3
+x1 = 150
+x2 = 120
 
 # Alternatively load a TTF font.  Make sure the .ttf font file is in the
 # same directory as the python script!
 # Some other nice fonts to try: http://www.dafont.com/bitmap.php
-font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 18)
+font1 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 24)
+font2 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 40)
 
 # Turn on the backlight
 backlight = digitalio.DigitalInOut(board.D22)
@@ -65,11 +66,11 @@ backlight.value = True
 while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
-    y1=0
-    y2=15
+    y1=5
+    y2=30
     #TODO: fill in here. You should be able to look in cli_clock.py and stats.py
-    draw.text((x1,y1), time.strftime("%a %d" ), font=font, fill="#FFFFF0")
-    draw.text((x2,y2), time.strftime("%H:%M:%S"), font=font, fill="#FFFFF0")
+    draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#F4E38E")
+    draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FFFFF0")
 
     # Display image.
     disp.image(image, rotation)
