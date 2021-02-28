@@ -66,7 +66,7 @@ while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
     y1=0
-    y2=4
+    y2=15
     #TODO: fill in here. You should be able to look in cli_clock.py and stats.py
     draw.text((x1,y1), time.strftime("%m/%d/%Y" ), font=font, fill="#FFFFF0")
     draw.text((x2,y2), time.strftime("%H:%M:%S"), font=font, fill="#FFFFF0")
