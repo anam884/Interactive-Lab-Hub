@@ -49,7 +49,7 @@ padding = -2
 top = padding
 bottom = height - padding
 # Move left to right keeping track of the current x position for drawing shapes.
-x1 = 0
+x1 = 34
 x2 = 3
 
 # Alternatively load a TTF font.  Make sure the .ttf font file is in the
@@ -68,7 +68,7 @@ while True:
     y1=0
     y2=15
     #TODO: fill in here. You should be able to look in cli_clock.py and stats.py
-    draw.text((x1,y1), time.strftime("%m/%a/%Y" ), font=font, fill="#FFFFF0")
+    draw.text((x1,y1), time.strftime("%a %d" ), font=font, fill="#FFFFF0")
     draw.text((x2,y2), time.strftime("%H:%M:%S"), font=font, fill="#FFFFF0")
 
     # Display image.
