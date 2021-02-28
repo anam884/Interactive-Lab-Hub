@@ -74,8 +74,8 @@ draw = ImageDraw.Draw(image)
 draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 disp.image(image)
 
-image1 = Image.open("Image1.jpg")
-image2 = Image.open("Image2.JPG")
+image1 = Image.open("pic1.JPG")
+image2 = Image.open("pic2.JPG")
 
 backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
