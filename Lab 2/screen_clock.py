@@ -49,7 +49,7 @@ padding = -2
 top = padding
 bottom = height - padding
 # Move left to right keeping track of the current x position for drawing shapes.
-x1 = 34
+x1 = right
 x2 = 3
 
 # Alternatively load a TTF font.  Make sure the .ttf font file is in the
