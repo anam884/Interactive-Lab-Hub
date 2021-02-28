@@ -49,7 +49,8 @@ padding = -2
 top = padding
 bottom = height - padding
 # Move left to right keeping track of the current x position for drawing shapes.
-x = 0
+x1 = 0
+x2 = 3
 
 # Alternatively load a TTF font.  Make sure the .ttf font file is in the
 # same directory as the python script!
@@ -66,7 +67,8 @@ while True:
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
     y=top
     #TODO: fill in here. You should be able to look in cli_clock.py and stats.py
-    draw.text((x,y), time.strftime("%m/%d/%Y %H:%M:%S"), font=font, fill="#FFFFF0")
+    draw.text((x1,y), time.strftime("%m/%d/%Y" ), font=font, fill="#FFFFF0")
+    draw.text((x2,y), time.strftime("%H:%M:%S"), font=font, fill="#FFFFF0")
 
     # Display image.
     disp.image(image, rotation)
