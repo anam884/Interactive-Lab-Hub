@@ -146,13 +146,13 @@ rotation2=180
 #         disp.image(face2)  
 #     if not buttonA.value and not buttonB.value:  # none pressed
 #         disp.image(face1)   
-           img = Image.open('gif1.gif', 'r') 
-           seq =  [] 
-            try:     
-                while 1:         
-                    seq.append(img.copy())         
-                    img.seek(len(seq)) # skip to next frame  
-            except EOFError:           
-                pass  for frame in seq:          
-            im.paste(frame)          
-            im.show()
+img = Image.open('gif1.gif', 'r') 
+seq =  [] 
+try:     
+  while 1:         
+    seq.append(img.copy())         
+    img.seek(len(seq)) # skip to next frame  
+except EOFError:           
+  pass  for frame in seq:          
+image.paste(frame)          
+image.show()
