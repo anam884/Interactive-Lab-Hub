@@ -147,11 +147,8 @@ rotation2=180
 #     if not buttonA.value and not buttonB.value:  # none pressed
 #         disp.image(face1)  
 
-from PIL import Image, ImageDraw,ImageFont
-from win32api import GetSystemMetrics
-Width = GetSystemMetrics(0)
-Height = GetSystemMetrics(1)
+
 im = Image.new("RGB",(Width,Height),"white")
-img = Image.open('images/text.gif', 'r')
+img = Image.open('gif1.gif', 'r')
 im.paste(img,(420,600))
 im.show()
