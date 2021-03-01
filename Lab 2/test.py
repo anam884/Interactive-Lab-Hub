@@ -72,7 +72,7 @@ rotation = 90
 draw = ImageDraw.Draw(image)
 
 # Draw a black filled box to clear the image.
-draw.rectangle((0, 0, width, height), outline=0, fill=(1, 1, 1))
+draw.rectangle((0, 0, width, height), outline=0, fill="FFFFFF")
 disp.image(image, rotation)
 
 padding = -2
@@ -116,10 +116,10 @@ rotation2=180
 while True:
   y1=5
   y2=30
-#   draw.rectangle((0, 0, width, height), outline=0, fill=0)
-#   draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
-#   draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
-#   disp.image(image,rotation)
+  draw.rectangle((0, 0, width, height), outline=0, fill="FFFFFF")
+  draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
+  draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
+  disp.image(image,rotation)
   for i in range(1, 31):
 #              draw.rectangle((0, 0, width, height), outline=0, fill=0)
 #     draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
