@@ -119,16 +119,17 @@ rotation2=180
 while True:
      y1=5
      y2=30
+     draw.rectangle((0, 0, width, height), outline=0, fill="#FFFFFF")
+     draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
+     draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
+     disp.image(image,rotation)
      if buttonA.value and buttonB.value:
          backlight.value = False  # turn off backlight
      else:
          backlight.value = True  # turn on backlight
      if buttonB.value and not buttonA.value:  # just button A pressed
        for i in range(101, 128):
-             draw.rectangle((0, 0, width, height), outline=0, fill="#FFFFFF")
-             draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
-             draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
-             disp.image(image,rotation)
+
              image2 = Image.open(f"{i}.png")
              disp.image(image2)
              time.sleep(0.3)
