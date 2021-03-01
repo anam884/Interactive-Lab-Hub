@@ -63,28 +63,17 @@ disp = st7789.ST7789(
 
 # Create blank image for drawing.
 # Make sure to create image with mode 'RGB' for full color.
-if disp.rotation % 180 == 90:
-     height = disp.width  # we swap height/width to rotate it to landscape!
-     width = disp.height
-else:
-     width = disp.width  # we swap height/width to rotate it to landscape!
-     height = disp.height
-# image = Image.new("RGB", (width, height))
-# rotation = 90
-
-# height = disp.width  # we swap height/width to rotate it to landscape!
-# width = disp.height
+height = disp.width  # we swap height/width to rotate it to landscape!
+width = disp.height
 image = Image.new("RGB", (width, height))
-image2 = Image.new("RGB", (width, height))
-rotation = 180
+rotation = 90
+
 # Get drawing object to draw on image.
 draw = ImageDraw.Draw(image)
-draw = ImageDraw.Draw(image2)
 
 # Draw a black filled box to clear the image.
 draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
-disp.image(image)
-disp.image(image2,rotation)
+disp.image(image, rotation)
 
 padding = -2
 top = padding
@@ -130,7 +119,7 @@ while True:
   draw.rectangle((0, 0, width, height), outline=0, fill=0)
   draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
   draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
-  disp.image(image2,rotation)
+  disp.image(image,rotation)
 #   for i in range(1, 31):
 #             image = Image.open(f"{i}.png")
 #             image_scale = scale_image(image)
