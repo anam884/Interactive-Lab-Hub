@@ -76,14 +76,14 @@ else:
 # width = disp.height
 image = Image.new("RGB", (width, height))
 image2 = Image.new("RGB", (width, height))
-rotation = 90
+rotation = 180
 # Get drawing object to draw on image.
 draw = ImageDraw.Draw(image)
 
 # Draw a black filled box to clear the image.
 draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 disp.image(image)
-# disp.image(image2,rotation)
+disp.image(image2,rotation)
 
 padding = -2
 top = padding
