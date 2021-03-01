@@ -127,7 +127,7 @@ while True:
 #     disp.image(image,rotation)
              image = Image.open(f"{i}.png")
              image_scale = scale_image(image)
-             disp.image(image_scale,rotation2)
+             disp.image(image_scale)
 #             draw.rectangle((0, 0, width, height), outline=0, fill=0)
 #             draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
 #             draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
