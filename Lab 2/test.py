@@ -116,10 +116,10 @@ rotation2=180
 while True:
   y1=5
   y2=30
-  draw.rectangle((0, 0, width, height), outline=0, fill="#FFFFFF")
-  draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
-  draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
-  disp.image(image,rotation)
+#   draw.rectangle((0, 0, width, height), outline=0, fill="#FFFFFF")
+#   draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
+#   draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
+#   disp.image(image,rotation)
   for i in range(1, 31):
 #              draw.rectangle((0, 0, width, height), outline=0, fill=0)
 #     draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
@@ -131,10 +131,10 @@ while True:
              draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
              draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
              disp.image(image,rotation)
-#             draw.rectangle((0, 0, width, height), outline=0, fill=0)
-#             draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
-#             draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
-#             disp.image(image,rotation)
+             draw.rectangle((0, 0, width, height), outline=0, fill="#FFFFFF")
+             draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
+             draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
+             disp.image(image,rotation)
 #     if buttonA.value and buttonB.value:
 #         backlight.value = False  # turn off backlight
 #     else:
