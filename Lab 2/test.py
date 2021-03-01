@@ -148,24 +148,17 @@ rotation2=180
 #         disp.image(face1)  
 # Reading an animated GIF file using Python Image Processing Library - Pillow
 
-from PIL import Image
 
-from PIL import GifImagePlugin
+canvas = Image.new("RGB",(width,height),"white")
+gif = Image.open('gif1.gif', 'r')
+frames = []
+try:
+    while 1:
+        frames.append(gif.copy())
+        gif.seek(len(frames))
+except EOFError:
+    pass
 
- 
-
-imageObject = Image.open("gif1.gif")
-
-print(imageObject.is_animated)
-
-print(imageObject.n_frames)
-
- 
-
-# Display individual frames from the loaded animated GIF file
-
-for frame in range(0,imageObject.n_frames):
-
-    imageObject.seek(frame)
-
-    imageObject.show()
+for frame in frames:
+     canvas.paste(frame)
+     canvas.show()
