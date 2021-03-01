@@ -119,16 +119,11 @@ while True:
   for i in range(1, 31):
             image = Image.open(f"{i}.png")
             image_scale = scale_image(image)
-<<<<<<< HEAD
-           # disp.image(image_scale)
-            draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0000")
-            draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0000")
             disp.image(image_scale)
             draw.rectangle((0, 0, width, height), outline=0, fill=0)
             draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#000000")
             draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#000000")
             disp.image(image, rotation)
->>>>>>> 396711161e4c5ab1f67a37499d9782c6b0f8d8f8
 #     if buttonA.value and buttonB.value:
 #         backlight.value = False  # turn off backlight
 #     else:
@@ -139,4 +134,5 @@ while True:
 #         disp.image(face2)  
 #     if not buttonA.value and not buttonB.value:  # none pressed
 #         disp.image(face1)   
-≈
+
+
