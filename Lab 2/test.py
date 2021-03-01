@@ -76,7 +76,7 @@ else:
 # width = disp.height
 image = Image.new("RGB", (width, height))
 image2 = Image.new("RGB", (width, height))
-rotation = 180
+rotation = 90
 # Get drawing object to draw on image.
 draw = ImageDraw.Draw(image)
 
