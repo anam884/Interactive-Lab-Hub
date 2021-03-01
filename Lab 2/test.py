@@ -23,7 +23,7 @@ import adafruit_rgb_display.hx8357 as hx8357  # pylint: disable=unused-import
 import adafruit_rgb_display.st7735 as st7735  # pylint: disable=unused-import
 import adafruit_rgb_display.ssd1351 as ssd1351  # pylint: disable=unused-import
 import adafruit_rgb_display.ssd1331 as ssd1331  # pylint: disable=unused-import
-from threading import Thread
+import _thread
 
 # Configuration for CS and DC pins (these are PiTFT defaults):
 cs_pin = digitalio.DigitalInOut(board.CE0)
@@ -165,5 +165,5 @@ def secondFunction():
              draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
              disp.image(image,rotation)
 
-Thread.start_new_thread(firstFunction, ())
-Thread.start_new_thread(secondFunction, ())
+_thread.start_new_thread(firstFunction, ())
+_thread.start_new_thread(secondFunction, ())
