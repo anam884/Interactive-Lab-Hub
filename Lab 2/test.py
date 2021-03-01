@@ -146,26 +146,13 @@ rotation2=180
 #         disp.image(face2)  
 #     if not buttonA.value and not buttonB.value:  # none pressed
 #         disp.image(face1)   
-y1=5
-y2=30
-def firstFunction():
-    while True:
-
-     draw.rectangle((0, 0, width, height), outline=0, fill=None)
-     draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
-     draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
-     disp.image(image,rotation)
-def secondFunction():
-    while True:
-      for i in range(1, 31):
-             image2 = Image.open(f"{i}.png")
-             image_scale = scale_image(image2)
-             disp.image(image_scale,rotation)
-try:
-  _thread.start_new_thread(firstFunction, ())
-  _thread.start_new_thread(secondFunction, ())
-except:
-   print ("Error: unable to start thread")
-
-while 1:
-   pass
+           img = Image.open('gif1.gif', 'r') 
+           seq =  [] 
+            try:     
+                while 1:         
+                    seq.append(img.copy())         
+                    img.seek(len(seq)) # skip to next frame  
+            except EOFError:           
+                pass  for frame in seq:          
+            im.paste(frame)          
+            im.show()
