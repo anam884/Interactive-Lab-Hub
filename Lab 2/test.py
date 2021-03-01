@@ -165,8 +165,8 @@ def secondFunction():
              draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
              disp.image(image,rotation)
 try:
-_thread.start_new_thread(firstFunction, ())
-_thread.start_new_thread(secondFunction, ())
+  _thread.start_new_thread(firstFunction, ())
+  _thread.start_new_thread(secondFunction, ())
 except:
    print ("Error: unable to start thread")
 
