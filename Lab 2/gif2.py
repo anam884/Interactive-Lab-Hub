@@ -117,11 +117,8 @@ x1 = 0
 x2 = 0
 rotation2=180
 while True:
-   y1=5
-   y2=30
-
-
-
+     y1=5
+     y2=30
      if buttonA.value and buttonB.value:
          backlight.value = False  # turn off backlight
      else:
