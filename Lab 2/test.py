@@ -131,9 +131,10 @@ while True:
              image2 = Image.open(f"{i}.png")
 
              image_scale = scale_image(image2)
-             print(image_scale.height)
-             print(image_scale.width)
-             disp.image(image_scale)
+             resized_im = image.resize((round(image.width), round(image.height*0.5)))
+             print(resized_im.height)
+             print(resized_im.width)
+             disp.image(resized_im)
 #              draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
 #              draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
 #              disp.image(image,rotation)
