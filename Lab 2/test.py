@@ -146,8 +146,8 @@ rotation2=180
 #         disp.image(face2)  
 #     if not buttonA.value and not buttonB.value:  # none pressed
 #         disp.image(face1)   
- y1=5
- y2=30
+y1=5
+y2=30
 def firstFunction():
     while True:
 
