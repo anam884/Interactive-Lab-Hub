@@ -115,15 +115,17 @@ x2 = 120
 while True:
   y1=5
   y2=30
-
-  for i in range(1, 31):
-            image = Image.open(f"{i}.png")
-            image_scale = scale_image(image)
-            disp.image(image_scale)
-#           draw.rectangle((0, 0, width, height), outline=0, fill=0)
-            draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#000000")
-            draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#000000")
-#            disp.image(image)
+  draw.rectangle((0, 0, width, height), outline=0, fill=0)
+  draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#000000")
+  draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#000000")
+#   for i in range(1, 31):
+# #             image = Image.open(f"{i}.png")
+# #             image_scale = scale_image(image)
+# #             disp.image(image_scale)
+# #           draw.rectangle((0, 0, width, height), outline=0, fill=0)
+#             draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#000000")
+#             draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#000000")
+# #            disp.image(image)
 #     if buttonA.value and buttonB.value:
 #         backlight.value = False  # turn off backlight
 #     else:
