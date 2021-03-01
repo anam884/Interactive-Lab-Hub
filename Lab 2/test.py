@@ -106,9 +106,9 @@ def scale_image(image):
     image = image.resize((scaled_width, scaled_height), Image.BICUBIC)
 
     # Crop and center the image
-    x = scaled_width // 2 - width // 2
-    y = scaled_height // 2 - height // 2
-    image = image.crop((x, y, x + width, y + height))
+#     x = scaled_width // 2 - width // 2
+#     y = scaled_height // 2 - height // 2
+#     image = image.crop((x, y, x + width, y + height))
     return image
 
 font1 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 24)
@@ -131,7 +131,7 @@ while True:
              image2 = Image.open(f"{i}.png")
              print(image2.height)
              print(image2.width)
-#              image_scale = scale_image(image2)
+             image_scale = scale_image(image2)
              disp.image(image2)
 #              draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
 #              draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
