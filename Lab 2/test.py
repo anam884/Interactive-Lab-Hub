@@ -109,8 +109,8 @@ x1 = 150
 x2 = 120
 
 while True:
-   y1=5
-   y2=30
+  y1=5
+  y2=30
   draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#F4E38E")
   draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FFFFF0")
   for i in range(1, 31):
