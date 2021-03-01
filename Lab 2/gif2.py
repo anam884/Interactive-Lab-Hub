@@ -126,17 +126,21 @@ while True:
      i2=Image.open("101.png")
      disp.image(i2)
      if buttonA.value and buttonB.value:
-         backlight.value = False  # turn off backlight
+#          backlight.value = False  # turn off backlight
+         i2=Image.open("101.png")
+         disp.image(i2)
      else:
-         backlight.value = True  # turn on backlight
+#          backlight.value = True  # turn on backlight
+         i2=Image.open("101.png")
+         disp.image(i2)
      if buttonB.value and not buttonA.value:  # just button A pressed
        for i in range(101, 128):
-
              image2 = Image.open(f"{i}.png")
              disp.image(image2)
              time.sleep(0.3)
 #      if buttonA.value and not buttonB.value:  # just button B pressed
 #          disp.image(face2)  
-#      if not buttonA.value and not buttonB.value:  # none pressed
-#          disp.image(face1)  
+      if not buttonA.value and not buttonB.value:  # none pressed
+        i2=Image.open("101.png")
+        disp.image(i2)  
 # Reading an animated GIF file using Python Image Processing Library - Pillow
