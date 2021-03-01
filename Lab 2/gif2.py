@@ -106,9 +106,9 @@ def scale_image(image):
     image = image.resize((scaled_width, scaled_height), Image.BICUBIC)
 
     # Crop and center the image
-#     x = scaled_width // 2 - width // 2
-#     y = scaled_height // 2 - height // 2
-#     image = image.crop((x, y, x + width, y + height))
+     x = scaled_width // 2 - width // 2
+     y = scaled_height // 2 - height // 2
+     image = image.crop((x, y, x + width, y + height))
     return image
 
 font1 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 24)
@@ -119,38 +119,24 @@ rotation2=180
 while True:
    y1=5
    y2=30
-   draw.rectangle((0, 0, width, height), outline=0, fill="#FFFFFF")
-   draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
-   draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
-   disp.image(image,rotation)
-   for i in range(101, 128):
-# #              draw.rectangle((0, 0, width, height), outline=0, fill=0)
-# #     draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
-# #     draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
-# #     disp.image(image,rotation)
-             image2 = Image.open(f"{i}.png")
 
-#              image_scale = scale_image(image2)
-             resized_im = image2.resize((round(image.width), round(image.height*0.5)))
-             print(resized_im.height)
-             print(resized_im.width)
+
+
+     if buttonA.value and buttonB.value:
+         backlight.value = False  # turn off backlight
+     else:
+         backlight.value = True  # turn on backlight
+     if buttonB.value and not buttonA.value:  # just button A pressed
+       for i in range(101, 128):
+             draw.rectangle((0, 0, width, height), outline=0, fill="#FFFFFF")
+             draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
+             draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
+             disp.image(image,rotation)
+             image2 = Image.open(f"{i}.png")
              disp.image(image2)
              time.sleep(0.3)
-#              draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
-#              draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
-#              disp.image(image,rotation)
-#              draw.rectangle((0, 0, width, height), outline=0, fill=None)
-#              draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
-#              draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
-#              disp.image(image,rotation)
-# #     if buttonA.value and buttonB.value:
-#         backlight.value = False  # turn off backlight
-#     else:
-#         backlight.value = True  # turn on backlight
-#     if buttonB.value and not buttonA.value:  # just button A pressed
-#         disp.image(face1) 
-#     if buttonA.value and not buttonB.value:  # just button B pressed
-#         disp.image(face2)  
-#     if not buttonA.value and not buttonB.value:  # none pressed
-#         disp.image(face1)  
+#      if buttonA.value and not buttonB.value:  # just button B pressed
+#          disp.image(face2)  
+#      if not buttonA.value and not buttonB.value:  # none pressed
+#          disp.image(face1)  
 # Reading an animated GIF file using Python Image Processing Library - Pillow
