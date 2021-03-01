@@ -74,8 +74,6 @@ draw = ImageDraw.Draw(image)
 draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 disp.image(image)
 
-# image1 = Image.open("gif1.gif")
-# image2 = Image.open("gif1.gif")
 
 backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
@@ -87,7 +85,7 @@ buttonA.switch_to_input()
 buttonB.switch_to_input()
 
 
-def image_rescaling(image):
+def scale_image(image):
 # Scale the image to the smaller screen dimension
     image_ratio = image.width / image.height
     screen_ratio = width / height
@@ -105,15 +103,19 @@ def image_rescaling(image):
     image = image.crop((x, y, x + width, y + height))
     return image
 
-# face1 = image_rescaling(image1)
-# face2 = image_rescaling(image2)
-# Display image.
-# disp.image(CTlogo)
+font1 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 24)
+font2 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 40)
+x1 = 150
+x2 = 120
 
 while True:
+   y1=5
+   y2=30
+  draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#F4E38E")
+  draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FFFFF0")
   for i in range(1, 31):
             image = Image.open(f"{i}.png")
-            image_scale = image_rescaling(image)
+            image_scale = scale_image(image)
             disp.image(image_scale)
 #     if buttonA.value and buttonB.value:
 #         backlight.value = False  # turn off backlight
