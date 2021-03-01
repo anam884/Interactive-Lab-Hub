@@ -5,4 +5,4 @@ Please place links here to the README.md's for each of your labs here:
 
 [Lab 1. Staging Interaction](Lab%201/)
 
-[Lab 2. The Clock of Pi](https://github.com/anam884/Interactive-Lab-Hub/tree/Spring2021/Lab%202)
+[Lab 2. The Clock of Pi](https://github.com/anam884/Interactive-Lab-Hub/blob/Spring2021/Lab%202/README.md)
