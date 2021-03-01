@@ -140,7 +140,7 @@ while True:
              time.sleep(0.3)
 #      if buttonA.value and not buttonB.value:  # just button B pressed
 #          disp.image(face2)  
-      if not buttonA.value and not buttonB.value:  # none pressed
-        i2=Image.open("101.png")
-        disp.image(i2)  
+     if not buttonA.value and not buttonB.value:  # none pressed
+         i2=Image.open("101.png")
+         disp.image(i2)  
 # Reading an animated GIF file using Python Image Processing Library - Pillow
