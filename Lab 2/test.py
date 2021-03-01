@@ -165,5 +165,5 @@ def secondFunction():
              draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
              disp.image(image,rotation)
 
-thread.start_new_thread(firstFunction, ())
-thread.start_new_thread(secondFunction, ())
+Thread.start_new_thread(firstFunction, ())
+Thread.start_new_thread(secondFunction, ())
