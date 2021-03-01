@@ -23,6 +23,7 @@ import adafruit_rgb_display.hx8357 as hx8357  # pylint: disable=unused-import
 import adafruit_rgb_display.st7735 as st7735  # pylint: disable=unused-import
 import adafruit_rgb_display.ssd1351 as ssd1351  # pylint: disable=unused-import
 import adafruit_rgb_display.ssd1331 as ssd1331  # pylint: disable=unused-import
+import thread
 
 # Configuration for CS and DC pins (these are PiTFT defaults):
 cs_pin = digitalio.DigitalInOut(board.CE0)
@@ -113,29 +114,29 @@ font2 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 40
 x1 = 150
 x2 = 120
 rotation2=180
-while True:
-  y1=5
-  y2=30
-#   draw.rectangle((0, 0, width, height), outline=0, fill="#FFFFFF")
-#   draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
-#   draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
-#   disp.image(image,rotation)
-  for i in range(1, 31):
-#              draw.rectangle((0, 0, width, height), outline=0, fill=0)
-#     draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
-#     draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
-#     disp.image(image,rotation)
-             image2 = Image.open(f"{i}.png")
-             image_scale = scale_image(image2)
-             disp.image(image_scale,rotation)
-             draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
-             draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
-             disp.image(image,rotation)
-             draw.rectangle((0, 0, width, height), outline=0, fill=None)
-             draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
-             draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
-             disp.image(image,rotation)
-#     if buttonA.value and buttonB.value:
+# while True:
+#   y1=5
+#   y2=30
+# #   draw.rectangle((0, 0, width, height), outline=0, fill="#FFFFFF")
+# #   draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
+# #   draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
+# #   disp.image(image,rotation)
+#   for i in range(1, 31):
+# #              draw.rectangle((0, 0, width, height), outline=0, fill=0)
+# #     draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
+# #     draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
+# #     disp.image(image,rotation)
+#              image2 = Image.open(f"{i}.png")
+#              image_scale = scale_image(image2)
+#              disp.image(image_scale,rotation)
+#              draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
+#              draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
+#              disp.image(image,rotation)
+#              draw.rectangle((0, 0, width, height), outline=0, fill=None)
+#              draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
+#              draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
+#              disp.image(image,rotation)
+# #     if buttonA.value and buttonB.value:
 #         backlight.value = False  # turn off backlight
 #     else:
 #         backlight.value = True  # turn on backlight
@@ -146,4 +147,23 @@ while True:
 #     if not buttonA.value and not buttonB.value:  # none pressed
 #         disp.image(face1)   
 
+def firstFunction():
+    while True:
+     y1=5
+     y2=30
+     draw.rectangle((0, 0, width, height), outline=0, fill=None)
+     draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
+     draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
+     disp.image(image,rotation)
+def secondFunction():
+    while True:
+      for i in range(1, 31):
+             image2 = Image.open(f"{i}.png")
+             image_scale = scale_image(image2)
+             disp.image(image_scale,rotation)
+             draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
+             draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
+             disp.image(image,rotation)
 
+thread.start_new_thread(firstFunction, ())
+thread.start_new_thread(secondFunction, ())
