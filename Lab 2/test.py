@@ -153,6 +153,7 @@ try:
     seq.append(img.copy())         
     img.seek(len(seq)) # skip to next frame  
 except EOFError:           
-  pass  for frame in seq:          
-image.paste(frame)          
-image.show()
+  pass  
+for frame in seq:          
+  image.paste(frame)          
+  image.show()
