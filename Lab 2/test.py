@@ -113,7 +113,7 @@ def image_rescaling(image):
 
 while True:
   for i in range(1, 31):
-            image = Image.open(f"/gif/{i}.png")
+            image = Image.open(f"Interactive-Lab-Hub/Lab 2/gif/{i}.png")
             image_scale = image_rescaling(image)
             disp.image(image_scale)
 #     if buttonA.value and buttonB.value:
