@@ -134,7 +134,7 @@ while True:
              resized_im = image.resize((round(image.width), round(image.height*0.5)))
              print(resized_im.height)
              print(resized_im.width)
-             disp.image(resized_im)
+             disp.image(resized_im, rotation)
 #              draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
 #              draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
 #              disp.image(image,rotation)
