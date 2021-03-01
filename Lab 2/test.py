@@ -119,9 +119,9 @@ while True:
   for i in range(1, 31):
             image = Image.open(f"{i}.png")
             image_scale = scale_image(image)
-            disp.image(image_scale)
-            draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#000000")
-            draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#000000")
+           # disp.image(image_scale)
+            draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0000")
+            draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0000")
 #     if buttonA.value and buttonB.value:
 #         backlight.value = False  # turn off backlight
 #     else:
