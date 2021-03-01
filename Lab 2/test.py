@@ -112,7 +112,7 @@ def image_rescaling(image):
 # disp.image(CTlogo)
 
 while True:
-  for i in range(0, 30):
+  for i in range(1, 31):
             image = Image.open(f"/gif/{i}.png")
             image_scale = image_rescaling(image)
             disp.image(image_scale)
