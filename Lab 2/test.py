@@ -147,7 +147,7 @@ rotation2=180
 #     if not buttonA.value and not buttonB.value:  # none pressed
 #         disp.image(face1)  
 
-While True:
+while True:
   img = Image.open('gif1.gif', 'r')
   # image.paste(img,(420,600))
   image.show()
