@@ -70,7 +70,7 @@ else:
     width = disp.width  # we swap height/width to rotate it to landscape!
     height = disp.height
 image = Image.new("RGB", (width, height))
-
+rotation = 90
 # Get drawing object to draw on image.
 draw = ImageDraw.Draw(image)
 
@@ -120,10 +120,10 @@ while True:
             image = Image.open(f"{i}.png")
             image_scale = scale_image(image)
             disp.image(image_scale)
-            draw.rectangle((0, 0, width, height), outline=0, fill=0)
+#           draw.rectangle((0, 0, width, height), outline=0, fill=0)
             draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#000000")
             draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#000000")
-            disp.image(image, rotation)
+#            disp.image(image)
 #     if buttonA.value and buttonB.value:
 #         backlight.value = False  # turn off backlight
 #     else:
