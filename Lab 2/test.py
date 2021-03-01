@@ -113,8 +113,8 @@ def scale_image(image):
 
 font1 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 24)
 font2 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 40)
-x1 = 150
-x2 = 120
+x1 = 0
+x2 = 0
 rotation2=180
 while True:
    y1=5
