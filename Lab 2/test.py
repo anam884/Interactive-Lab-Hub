@@ -146,8 +146,26 @@ rotation2=180
 #         disp.image(face2)  
 #     if not buttonA.value and not buttonB.value:  # none pressed
 #         disp.image(face1)  
+# Reading an animated GIF file using Python Image Processing Library - Pillow
 
-while True:
-  img = Image.open('gif1.gif', 'r')
-  # image.paste(img,(420,600))
-  image.show()
+from PIL import Image
+
+from PIL import GifImagePlugin
+
+ 
+
+imageObject = Image.open("gif1.gif")
+
+print(imageObject.is_animated)
+
+print(imageObject.n_frames)
+
+ 
+
+# Display individual frames from the loaded animated GIF file
+
+for frame in range(0,imageObject.n_frames):
+
+    imageObject.seek(frame)
+
+    imageObject.show()
