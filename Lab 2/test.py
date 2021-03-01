@@ -103,7 +103,6 @@ def image_rescaling(image):
     x = scaled_width // 2 - width // 2
     y = scaled_height // 2 - height // 2
     image = image.crop((x, y, x + width, y + height))
-    print("here")
     return image
 
 # face1 = image_rescaling(image1)
