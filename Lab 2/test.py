@@ -130,8 +130,8 @@ while True:
 # #     disp.image(image,rotation)
              image2 = Image.open(f"{i}.png")
 
-             image_scale = scale_image(image2)
-             resized_im = image.resize((round(image.width), round(image.height*0.5)))
+#              image_scale = scale_image(image2)
+             resized_im = image2.resize((round(image.width), round(image.height*0.5)))
              print(resized_im.height)
              print(resized_im.width)
              disp.image(resized_im, rotation)
