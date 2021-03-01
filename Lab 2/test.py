@@ -148,7 +148,6 @@ rotation2=180
 #         disp.image(face1)  
 
 
-im = Image.new("RGB",(Width,Height),"white")
 img = Image.open('gif1.gif', 'r')
 im.paste(img,(420,600))
 im.show()
