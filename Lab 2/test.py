@@ -114,21 +114,21 @@ font2 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 40
 x1 = 150
 x2 = 120
 rotation2=180
-# while True:
-#   y1=5
-#   y2=30
-# #   draw.rectangle((0, 0, width, height), outline=0, fill="#FFFFFF")
-# #   draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
-# #   draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
-# #   disp.image(image,rotation)
-#   for i in range(1, 31):
+while True:
+   y1=5
+   y2=30
+   draw.rectangle((0, 0, width, height), outline=0, fill="#FFFFFF")
+   draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
+   draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
+   disp.image(image,rotation)
+   for i in range(1, 31):
 # #              draw.rectangle((0, 0, width, height), outline=0, fill=0)
 # #     draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
 # #     draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
 # #     disp.image(image,rotation)
-#              image2 = Image.open(f"{i}.png")
-#              image_scale = scale_image(image2)
-#              disp.image(image_scale,rotation)
+             image2 = Image.open(f"{i}.png")
+             image_scale = scale_image(image2)
+             disp.image(image_scale,rotation)
 #              draw.text((x1,y1), time.strftime("%a %d" ), font=font1, fill="#FF0FF0")
 #              draw.text((x2,y2), time.strftime("%H:%M"), font=font2, fill="#FF0FF0")
 #              disp.image(image,rotation)
@@ -147,18 +147,3 @@ rotation2=180
 #     if not buttonA.value and not buttonB.value:  # none pressed
 #         disp.image(face1)  
 # Reading an animated GIF file using Python Image Processing Library - Pillow
-
-while True:
-  canvas = Image.new("RGB",(width,height))
-  gif = Image.open('gif1.gif', 'r')
-  frames = []
-  try:
-      while 1:
-          frames.append(gif.copy())
-          gif.seek(len(frames))
-  except EOFError:
-      pass
-
-  for frame in frames:
-       canvas.paste(frame)
-       canvas.show()
