@@ -79,6 +79,7 @@ image2 = Image.new("RGB", (width, height))
 rotation = 180
 # Get drawing object to draw on image.
 draw = ImageDraw.Draw(image)
+draw = ImageDraw.Draw(image2)
 
 # Draw a black filled box to clear the image.
 draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
