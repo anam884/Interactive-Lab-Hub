@@ -148,7 +148,7 @@ rotation2=180
 #         disp.image(face1)  
 # Reading an animated GIF file using Python Image Processing Library - Pillow
 
-while Ture:
+while True:
   canvas = Image.new("RGB",(width,height),"white")
   gif = Image.open('gif1.gif', 'r')
   frames = []
