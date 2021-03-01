@@ -149,5 +149,5 @@ rotation2=180
 
 
 img = Image.open('gif1.gif', 'r')
-im.paste(img,(420,600))
-im.show()
+# image.paste(img,(420,600))
+image.show()
