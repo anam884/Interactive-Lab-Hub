@@ -193,7 +193,7 @@ As always, make sure you document contributions and ideas from others explicitly
 
 You are permitted (but not required) to work in groups and share a turn in; you are expected to make equal contribution on any group work you do, and N people's group project should look like N times the work of a single person's lab. What each person did should be explicitly documented. Make sure the page for the group turn in is linked to your Interactive Lab Hub page. 
 
-**[With Part 2 modifications](https://drive.google.com/file/d/1Qr8Kg7nhhrY2Jm_pfyLf4qWWGMnQAG4x/view?usp=sharing)**
+**[With Part 2 modifications](https://drive.google.com/file/d/1lo4_L-N_I7jgIUS6zkkFSbQNxmNtTWQM/view?usp=sharing)**
 
 Code for this part is in part2.py
 
