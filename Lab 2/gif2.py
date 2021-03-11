@@ -137,7 +137,7 @@ while True:
        for i in range(101, 128):
              image2 = Image.open(f"{i}.png")
              disp.image(image2)
-             time.sleep(0.3)
+             time.sleep(0)
 #      if buttonA.value and not buttonB.value:  # just button B pressed
 #          disp.image(face2)  
      if not buttonA.value and not buttonB.value:  # none pressed
