@@ -154,6 +154,7 @@ Does time have to be linear?  How do you measure a year? [In daylights? In midni
 Can you make time interactive? You can look in `screen_test.py` for examples for how to use the buttons.
 
 **A copy of your code should be in your Lab 2 Github repo.**
+**Gif2.py is the source file**
 
 You can push to your personal github repo by adding the files here, commiting and pushing.
 
@@ -168,11 +169,12 @@ After that, git will ask you to login to your github account to upload.
 ## Part F. 
 ## Make a short video of your modified barebones PiClock
 
-**Take a video of your PiClock.**
+**[video of modified clock](https://drive.google.com/file/d/1sw0CLBC2r5POK_ud2w7kdzGWHxlUd-fy/view?usp=sharing)**
 
 ## Part G. 
 ## Sketch and brainstorm further interactions and features you would like for your clock for Part 2.
 
+<<<<<<< HEAD
 ## Prep for Part 2
 
 1. Pick up remaining parts for kit.
@@ -188,5 +190,9 @@ Modify the code from last week's lab to make a new visual interface for your new
 As always, make sure you document contributions and ideas from others explicitly in your writeup.
 
 You are permitted (but not required) to work in groups and share a turn in; you are expected to make equal contribution on any group work you do, and N people's group project should look like N times the work of a single person's lab. What each person did should be explicitly documented. Make sure the page for the group turn in is linked to your Interactive Lab Hub page. 
+=======
+![Features](PartG.png)
+
+>>>>>>> e9bb930727b11f137b50228bbb3b638c04f72929
 
 
