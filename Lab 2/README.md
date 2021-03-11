@@ -193,6 +193,14 @@ As always, make sure you document contributions and ideas from others explicitly
 
 You are permitted (but not required) to work in groups and share a turn in; you are expected to make equal contribution on any group work you do, and N people's group project should look like N times the work of a single person's lab. What each person did should be explicitly documented. Make sure the page for the group turn in is linked to your Interactive Lab Hub page. 
 
+**[With Part 2 modifications](https://drive.google.com/file/d/1Qr8Kg7nhhrY2Jm_pfyLf4qWWGMnQAG4x/view?usp=sharing)**
+
+Code for this part is in part2.py
+
+**Enhancements:**
+I updated the clock such that it displays current time by default. When the user presses button A it starts a 60 seconds timer and the hour glass annimates with that, the sand of hour glass completely drops in 60 seconds. When the user presses button B, stop watch starts and user can stop the clock by placing the hand on the proximity sensor. The idea is that the proximity sensor can be used as buzzer
+
+
 
 
 
