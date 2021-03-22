@@ -52,6 +52,9 @@ def signal_handler(sig, frame):
     audio_stream.terminate()
     sys.exit(0)
 
+def speak(command):
+    call(f"espeak -ven -k5 -s150 --stdout '{command}' | aplay", shell=True)
+
 signal.signal(signal.SIGINT, signal_handler)
 
 
