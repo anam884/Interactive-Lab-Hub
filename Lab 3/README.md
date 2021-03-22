@@ -65,7 +65,7 @@ Create a system that runs on the Raspberry Pi that takes in one or more sensors 
 ![Demo](demo.png)
 ![Demo](demo2.png)
 
-I used wizard of oz to create a paper piano. When a user touches the keys, corresponding notes play and user can listen to them in the headphones. [See demo video](https://drive.google.com/file/d/1vyyOZhb5gmQoswWQu1Ow9m0a4LnE9srw/view?usp=sharing) I used the touchsensor and conducting tape to sense the user input and play corresponding note accordingly. Since paper conducts electricity I was able to cover the whole setup to wizard the system. 
+I used wizard of oz to create a paper piano. When a user touches the keys, corresponding notes play and user can listen to them in the headphones. [See demo video](https://drive.google.com/file/d/1yKAs3cC_GykgOeYKx2FX9kc7Aezk9NE-/view?usp=sharing) I used the touchsensor and conducting tape to sense the user input and play corresponding note accordingly. Since paper conducts electricity I was able to cover the whole setup to wizard the system. 
 
 Initially I wanted to develop a trivia game with mic as user input but the mic we are provided is very poor at detecting voice hence I didn't use it. It was compromising the user experience.  
 
