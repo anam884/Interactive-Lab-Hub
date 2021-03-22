@@ -20,6 +20,10 @@ import textwrap
 import qwiic_joystick
 import qwiic_button
 from gtts import gTTS
+import adafruit_mpr121
+import os
+
+
 # import adafruit_apds9960.apds9960
 import time
 from subprocess import call, Popen
@@ -62,7 +66,8 @@ reset_pin = None
 
 # Config for display baudrate (default max is 24mhz):
 BAUDRATE = 24000000
-
+i2c = busio.I2C(board.SCL, board.SDA)
+mpr121 = adafruit_mpr121.MPR121(i2c)
 # Setup SPI bus using hardware SPI:
 spi = board.SPI()
 
@@ -114,16 +119,9 @@ redButton.begin()
 greenButton = qwiic_button.QwiicButton(0x62)
 greenButton.begin()
 
-font1 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 24)
-font2 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 40)
-font3 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 16)
-font4 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 60)
+font1 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 28)
 
-x1 = 0
-x2 = 0
-rotation2=180
 
-q=0
 
 # def get_answer(x,y):
 # 	if (520 <= x < 1023) & (0 <= y <= 518):
@@ -137,13 +135,64 @@ q=0
 
 
 while True:
-     y1=5
-     y2=30
-     draw.rectangle((0, 0, width, height), outline=0, fill="#FFFFFF")
+	draw.rectangle((0, 0, width, height), outline=0, fill="#FFFFFF")
+	caption="Tap the keys and play your own tune!"
+	wrapped = text_wrap(caption,font1,draw,160,124)
+	draw.text((2,2),wrapped, font=font1, fill="#ffa500")
+	disp.image(image,rotation)	    
 
-     time.sleep(0.3)
-     if greenButton.is_button_pressed():
-     	print("AA")
+	if mpr121[0].value:
+	    print("Pin 0 touched!")
+	    os.system('mpg321 a-5.mp3 &')
+	    time.sleep(0.3)
+	if mpr121[1].value:
+	    print("Pin 1 touched!")
+	    os.system('mpg321 a5.mp3 &')
+	    time.sleep(0.3)
+	if mpr121[2].value:
+	    print("Pin 2 touched!")
+	    os.system('mpg321 b3.mp3 &')
+	    time.sleep(0.3)
+	if mpr121[3].value:
+	    print("Pin 3 touched!")
+	    os.system('mpg321 b4.mp3 &')
+	    time.sleep(0.3)	        
+	if mpr121[4].value:
+	    os.system('mpg321 b5.mp3 &')
+	    time.sleep(0.3)
+	    print("Pin 4 touched!")
+	if mpr121[5].value:
+	    print("Pin 0 touched!")
+	    os.system('mpg321 c-4.mp3 &')
+	    time.sleep(0.3)
+	if mpr121[6].value:
+	    print("Pin 1 touched!")
+	    os.system('mpg321 c-5.mp3 &')
+	    time.sleep(0.3)
+	if mpr121[7].value:
+	    print("Pin 2 touched!")
+	    os.system('mpg321 c5.mp3 &')
+	    time.sleep(0.3)
+	if mpr121[8].value:
+	    print("Pin 3 touched!")
+	    os.system('mpg321 c6.mp3 &')
+	    time.sleep(0.3)	        
+	if mpr121[9].value:
+	    os.system('mpg321 d-5.mp3 &')
+	    time.sleep(0.3)
+	    print("Pin 4 touched!")
+	if mpr121[10].value:
+	    print("Pin 3 touched!")
+	    os.system('mpg321 e5.mp3 &')
+	    time.sleep(0.3)	        
+	if mpr121[11].value:
+	    os.system('mpg321 f-4.mp3 &')
+	    time.sleep(0.3)
+	    print("Pin 4 touched!")
+
+     # time.sleep(0.3)
+     # if greenButton.is_button_pressed():
+     # 	print("AA")
      # if q == 0:
      # 	question="How many years are a century?"
      # 	novo = text_wrap(question,font1,draw,160,124)
@@ -160,12 +209,4 @@ while True:
      # 	speak(f'C 1000')
      # 	time.sleep(0.5)
      # 	speak(f'D 10')
-
-
-#https://elinux.org/RPi_Text_to_Speech_(Speech_Synthesis)
-
-#!/bin/bash
-# say() { local IFS=+;/usr/bin/mplayer -ao alsa -really-quiet -noconsolecontrols "http://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=$*&tl=en"; }
-# #say $*
-# say " This mission is too important for me to allow you to jeopardize it."
 
