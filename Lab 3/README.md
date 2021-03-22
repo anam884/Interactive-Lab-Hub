@@ -62,7 +62,12 @@ There is an included [dspeech](.dspeech) demo that uses [Mozilla DeepSpeech](htt
 
 Create a system that runs on the Raspberry Pi that takes in one or more sensors and requires participants to speak to it. Document how the system works and include videos of both the system and the controller
 
-![Demo](work.png)
+![Demo](demo.png)
+![Demo](demo2.png)
+
+I used wizard of oz to create a paper piano. When a user touches the keys, corresponding notes play and user can listen to them in the headphones. I used the touchsensor and conducting tape to sense the user input and play corresponding note accordingly. Since paper conducts electricity I was able to cover the whole setup to wizard the system. 
+
+Initially I wanted to develop a trivia game with mic as user input but the mic we are provided is very poor at detecting voice hence I didn't use it. It was compromising the user experience.  
 
 Try to get at least two people to interact with your system. Ideally without them knowing there is a wizard but we recognize that can be hard.
 
