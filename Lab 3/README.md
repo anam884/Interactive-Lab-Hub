@@ -62,6 +62,8 @@ There is an included [dspeech](.dspeech) demo that uses [Mozilla DeepSpeech](htt
 
 Create a system that runs on the Raspberry Pi that takes in one or more sensors and requires participants to speak to it. Document how the system works and include videos of both the system and the controller
 
+![Demo](work.png)
+
 Try to get at least two people to interact with your system. Ideally without them knowing there is a wizard but we recognize that can be hard.
 
 Answer the following:
