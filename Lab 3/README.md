@@ -65,7 +65,7 @@ Create a system that runs on the Raspberry Pi that takes in one or more sensors 
 ![Demo](demo.png)
 ![Demo](demo2.png)
 
-I used wizard of oz to create a paper piano. When a user touches the keys, corresponding notes play and user can listen to them in the headphones. I used the touchsensor and conducting tape to sense the user input and play corresponding note accordingly. Since paper conducts electricity I was able to cover the whole setup to wizard the system. 
+I used wizard of oz to create a paper piano. When a user touches the keys, corresponding notes play and user can listen to them in the headphones. [See demo video](https://drive.google.com/file/d/1vyyOZhb5gmQoswWQu1Ow9m0a4LnE9srw/view?usp=sharing) I used the touchsensor and conducting tape to sense the user input and play corresponding note accordingly. Since paper conducts electricity I was able to cover the whole setup to wizard the system. 
 
 Initially I wanted to develop a trivia game with mic as user input but the mic we are provided is very poor at detecting voice hence I didn't use it. It was compromising the user experience.  
 
@@ -74,17 +74,18 @@ Try to get at least two people to interact with your system. Ideally without the
 Answer the following:
 
 ### What worked well about the system and what didn't?
-*your answer here*
+*The interface and wizard interaction worker really well overall. User was able to figure out the interaction as soon as they saw it. The mapping of the keys however was not accurate to the original so people who know how to play piano didn't get the same feel.*
 
 ### What worked well about the controller and what didn't?
 
-*your answer here*
+*Since the controller was clean without any visible electronics and the interface was a prinout of a piano user was able to figure out the expected interaction as soon as they saw it. 
+I used conducting tapes as touch sensors, the device malfunctioned at times when teh user tapped hard and the two paper's stick together. Since the paper would be touching the sensor underneath constantly that would result in a note continuous output*
 
 ### What lessons can you take away from the WoZ interactions for designing a more autonomous version of the system?
 
-*your answer here*
+*Maybe move from paper based system to a more solid material so that when ever I had to intervene to detach the two sheets of paper to avoid the continous input that part could be more autonomous*
 
 
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
 
-*your answer here*
+*It would be interesting to see if I can use the IR proximity gesture sensor to let the user play piano notes in air by moving their hand.*
