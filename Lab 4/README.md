@@ -167,12 +167,13 @@ Reiterating:
 ![product](final_product.png)
 **5. "Works like" prototypes: show us what the device can do
 The device can detect motion, take snapshots, time stamp the snapshot and turn on an alarm incase the user takes more than 10 seconds to turn the system off. As shared below the system captures images as soon as it detects motion and then one after 10 seconds if the system isn't turned off**
-initial testing of the system(https://drive.google.com/file/d/1MH4D03pkv-QZ3L5xpYOfEWo3oEMJoHU2/view?usp=sharing)
+[initial testing of the system](https://drive.google.com/file/d/1MH4D03pkv-QZ3L5xpYOfEWo3oEMJoHU2/view?usp=sharing)
 **Snapshot outputs:**
 ![initial image](initial.png)
 ![final image](final.png)
 **7. "Acts like" prototypes: videos/storyboards/other means of showing how a person would interact with the device**
-Demo Video (https://drive.google.com/file/d/17m6GZDEOVU-mXTFuGC7uJTIMsmA0XR3J/view?usp=sharing)
+
+[Demo Video](https://drive.google.com/file/d/17m6GZDEOVU-mXTFuGC7uJTIMsmA0XR3J/view?usp=sharing)
 
 **Acknowledgements:**
 I used the opensource script for motion detection by brainflakes, improved by pageauc, peewee2 and Kesthal www.raspberrypi.org/phpBB3/viewtopic.php?f=43&t=45235
