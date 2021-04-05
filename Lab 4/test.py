@@ -85,6 +85,8 @@ redButton.begin()
 
 greenButton = qwiic_button.QwiicButton(0x6f)
 greenButton.begin()
+redButton.LED_off()
+greenButton.LED_off()
 
 font1 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 28)
 
@@ -107,43 +109,88 @@ def timestamp(fileName):
 
 # motion detection:http://pastebin.com/raw.php?i=yH7JHz9w
 
-fileName="test.jpg"
+fileName1="theif_initial.jpg"
+fileName2="theif_final.jpg"
 # capture(fileName)
 # timestamp(fileName)
 motion_state=False
 
+a=1
+b=2
+c=7
+d=8
+
+w=0
+x=0
+y=0
+z=0
 
 while True:
     # if mpr121[0].value:
     #     print("Pin 0 touched!")
-
     if buttonB.value and not buttonA.value:  # just button A pressed
         print("normal profile")
         while True:
 
         # detcet motion
-            capture=0
+            captured_images=0
             motion_state=picam.motion()
             print(motion_state)
             if motion_state:
                 redButton.LED_on(brightness = 255)
+                capture(fileName1)
+                timestamp(fileName1)
+                speak_text("I see you")
+                speak_text("You have 10 seconds to Enter the security code and prove your identity")
+
+                delay=8    ###for 15 minutes delay 
+                close_time=time.time()+delay
+                countdown=10
+                while True:
+                    # speak_text(str(countdown))
+                    # print(time.time())
+                    if mpr121[11].value:
+                        w=0
+                        x=0
+                        y=0
+                        z=0
+                        # print("Pin 0 touched!") 
+                    if mpr121[1].value:  
+                        w=1
+                        print("Pin 1 touched!")
+                    if mpr121[2].value:  
+                        x=1
+                        print("Pin 2 touched!")
+                    if mpr121[7].value:  
+                        y=1
+                        print("Pin 7 touched!")
+                    if mpr121[8].value:  
+                        z=1
+                        print("Pin 8 touched!")
+                    # speak_text(str(countdown))
+                    # countdown-=1
+                    if (w and x and y and z):
+                        break;
+                    if time.time()>close_time:
+                        break
+                print (w,x,y,z)
+                if (w and x and y and z):
+                    speak_text("system unlocked!")
+                    redButton.LED_off()
+                    greenButton.LED_on(brightness = 255)
+                    time.sleep(3)
+                    greenButton.LED_off()
+                else:
+                    os.system('mpg321 alarm.mp3 &')
+                    speak_text("I am suspicious, reporting you to the owner!")
+                    capture(fileName2)
+                    timestamp(fileName2)
+                    
+
             else:
                 redButton.LED_off()
-            if redButton.is_button_pressed():
-                print("***************redressed*******")
+
 
     if buttonA.value and not buttonB.value:  # just button B pressed
         print("silent profile")
 
-
-
-
-    # if redButton.is_button_pressed():
-    #     print("***************redButton*******")
-    # if greenButton.is_button_pressed():
-    #     print("***************greenpressed*******")
-#     print ("taking pic")
-#     # with picamera.PiCamera() as camera:
-#     capture()
-#     print ("pic taken")
-    # speak_text("test is working fine, anam")
