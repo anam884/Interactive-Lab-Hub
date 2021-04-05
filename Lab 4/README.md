@@ -127,12 +127,17 @@ Here is an example:
 
 
 Make a paper display for your project that communicates the state of the Pi and a sensor. Ideally you should design it so that you can slide the Pi out to work on the circuit or programming, and then slide it back in and reattach a few wires to be back in operation.
+
+### Security Camera
+
+**a. Idea: Security Camera
+The idea was to build a portable security camera that detects motion and captures + timestamps images for the ownwer to review later. User can turn on the system when they are leaving the house/area. Whenever some one enters the property system will ask the user to enter the pic code to deactivate the system otherwise an alarm will go off and more images will be captured.** 
  
 **a. Document the design for your paper display.** (e.g. if you had to make it again from scratch, what information would you need?). Include interim iterations (or at least tell us about them).
 
-**b. Make a video of your paper display in action.**
+![paper prototype](paper2.png)
 
-**c. Explain the rationale for the design.** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
+**b. Explain the rationale for the design.** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
 
 ### Part D
 ### Materiality
