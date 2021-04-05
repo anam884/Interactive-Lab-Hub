@@ -138,6 +138,7 @@ The idea was to build a portable security camera that detects motion and capture
 ![paper prototype](paper2.png)
 
 **b. Explain the rationale for the design.** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
+It has to be big enough to incorporate a keypad so I kept it square(aligned with keypads shape) ideally it should be sleek so that it can be plced anywhere and can even be hooked to the wall. 
 
 ### Part D
 ### Materiality
@@ -147,8 +148,12 @@ The idea was to build a portable security camera that detects motion and capture
 Design a system with the Pi and anything from your kit with a focus on form, and materiality. The "stuff" that enclose the system should be informed by the desired interaction. What would a computer made of rocks be like? How would an ipod made of grass behave? Would a roomba made of gold clean your floor any differently?
 
 **a. document the material prototype.** Include candidates that were considered even if they were set aside later.
+- carboard
+- paper
+- plastic
 
 **b. explain the selection.**
+Since it's a prototype, I used carboard instead of paper for a firm structure so that it doesn't move when a user touches the key pad. Also carboard can hold the weight of camera and other buttons better. 
 
 ### Part 2.
 
@@ -156,11 +161,25 @@ Following exploration and reflection from Part 1, complete the "looks like," "wo
 
 Reiterating:
 ### Deliverables for this lab are: 
-1. Sketches/photos of device designs
-1. "Looks like" prototypes: show us what how the device should look, feel, sit, weigh, etc.
-3. "Works like" prototypes: show us what the device can do
-4. "Acts like" prototypes: videos/storyboards/other means of showing how a person would interact with the device
-5. Submit these in the lab 4 folder of your class [Github page], either as links or uploaded files. Each group member should post their own copy of the work to their own Lab Hub, even if some of the work is the same for each person in the group.
+**1. Sketches/photos of device designs**
+![working](working.png)
+**3. "Looks like" prototypes: show us what how the device should look, feel, sit, weigh, etc.**
+![product](final_product.png)
+**5. "Works like" prototypes: show us what the device can do
+The device can detect motion, take snapshots, time stamp the snapshot and turn on an alarm incase the user takes more than 10 seconds to turn the system off. As shared below the system captures images as soon as it detects motion and then one after 10 seconds if the system isn't turned off**
+initial testing of the system(https://drive.google.com/file/d/1MH4D03pkv-QZ3L5xpYOfEWo3oEMJoHU2/view?usp=sharing)
+**Snapshot outputs:**
+![initial image](initial.png)
+![final image](final.png)
+**7. "Acts like" prototypes: videos/storyboards/other means of showing how a person would interact with the device**
+Demo Video (https://drive.google.com/file/d/17m6GZDEOVU-mXTFuGC7uJTIMsmA0XR3J/view?usp=sharing)
+
+**Acknowledgements:**
+I used the opensource script for motion detection by brainflakes, improved by pageauc, peewee2 and Kesthal www.raspberrypi.org/phpBB3/viewtopic.php?f=43&t=45235
+
+
+
+
 
 
 
