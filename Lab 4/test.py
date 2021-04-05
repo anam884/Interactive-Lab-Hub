@@ -28,62 +28,62 @@ import picam
 
 
 
-# # Configuration for CS and DC pins (these are PiTFT defaults):
-# cs_pin = digitalio.DigitalInOut(board.CE0)
-# dc_pin = digitalio.DigitalInOut(board.D25)
-# # reset_pin = digitalio.DigitalInOut(board.D24)
-# reset_pin = None
+# Configuration for CS and DC pins (these are PiTFT defaults):
+cs_pin = digitalio.DigitalInOut(board.CE0)
+dc_pin = digitalio.DigitalInOut(board.D25)
+# reset_pin = digitalio.DigitalInOut(board.D24)
+reset_pin = None
 
 # # Config for display baudrate (default max is 24mhz):
-# # BAUDRATE = 24000000
-# # i2c = busio.I2C(board.SCL, board.SDA)
-# # mpr121 = adafruit_mpr121.MPR121(i2c)
-# # Setup SPI bus using hardware SPI:
-# # spi = board.SPI()
+BAUDRATE = 24000000
+i2c = busio.I2C(board.SCL, board.SDA)
+mpr121 = adafruit_mpr121.MPR121(i2c)
+# Setup SPI bus using hardware SPI:
+spi = board.SPI()
 
-# disp = st7789.ST7789(
-#     spi,
-#     cs=cs_pin,
-#     dc=dc_pin,
-#     rst=reset_pin,
-#     baudrate=BAUDRATE,
-#     width=135,
-#     height=240,
-#     x_offset=53,
-#     y_offset=40,
-# )
+disp = st7789.ST7789(
+    spi,
+    cs=cs_pin,
+    dc=dc_pin,
+    rst=reset_pin,
+    baudrate=BAUDRATE,
+    width=135,
+    height=240,
+    x_offset=53,
+    y_offset=40,
+)
 
-# # Create blank image for drawing.
-# # Make sure to create image with mode 'RGB' for full color.
+# Create blank image for drawing.
+# Make sure to create image with mode 'RGB' for full color.
+height = disp.width  # we swap height/width to rotate it to landscape!
+width = disp.height
+print (height)
+print (width)
+image = Image.new("RGB", (width, height))
+rotation = 90
 
-# image = Image.new("RGB", (width, height))
-# rotation = 90
+# Get drawing object to draw on image.
+draw = ImageDraw.Draw(image)
 
-# # Get drawing object to draw on image.
-# draw = ImageDraw.Draw(image)
-
-# # Draw a black filled box to clear the image.
-# draw.rectangle((0, 0, width, height), outline=0, fill="#FFFFFF")
-# disp.image(image, rotation)
+# Draw a black filled box to clear the image.
+draw.rectangle((0, 0, width, height), outline=0, fill="#FFFFFF")
+disp.image(image, rotation)
 
 
 
-# backlight = digitalio.DigitalInOut(board.D22)
-# backlight.switch_to_output()
-# backlight.value = True
+backlight = digitalio.DigitalInOut(board.D22)
+backlight.switch_to_output()
+backlight.value = True
 
-# buttonA = digitalio.DigitalInOut(board.D23)
-# buttonB = digitalio.DigitalInOut(board.D24)
-# buttonA.switch_to_input()
-# buttonB.switch_to_input()
+buttonA = digitalio.DigitalInOut(board.D23)
+buttonB = digitalio.DigitalInOut(board.D24)
+buttonA.switch_to_input()
+buttonB.switch_to_input()
 
-# # joystick = qwiic_joystick.QwiicJoystick()
-# # joystick.begin()
+redButton = qwiic_button.QwiicButton(0x60)
+redButton.begin()
 
-# redButton = qwiic_button.QwiicButton()
-# redButton.begin()
-
-greenButton = qwiic_button.QwiicButton()
+greenButton = qwiic_button.QwiicButton(0x6f)
 greenButton.begin()
 
 font1 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 28)
@@ -107,21 +107,41 @@ def timestamp(fileName):
 
 # motion detection:http://pastebin.com/raw.php?i=yH7JHz9w
 
-# fileName="test.jpg"
+fileName="test.jpg"
 # capture(fileName)
 # timestamp(fileName)
-# motion_state=False
+motion_state=False
 
 
 while True:
-    motion_state=picam.motion()
-    print(motion_state)
-    if motion_state:
-        greenButton.LED_on(brightness = 255)
-    else:
-        greenButton.LED_off()
-    if greenButton.is_button_pressed():
-        print("***************greenpressed*******")
+    # if mpr121[0].value:
+    #     print("Pin 0 touched!")
+
+    if buttonB.value and not buttonA.value:  # just button A pressed
+        print("normal profile")
+        while True:
+
+        # detcet motion
+            capture=0
+            motion_state=picam.motion()
+            print(motion_state)
+            if motion_state:
+                redButton.LED_on(brightness = 255)
+            else:
+                redButton.LED_off()
+            if redButton.is_button_pressed():
+                print("***************redressed*******")
+
+    if buttonA.value and not buttonB.value:  # just button B pressed
+        print("silent profile")
+
+
+
+
+    # if redButton.is_button_pressed():
+    #     print("***************redButton*******")
+    # if greenButton.is_button_pressed():
+    #     print("***************greenpressed*******")
 #     print ("taking pic")
 #     # with picamera.PiCamera() as camera:
 #     capture()
