@@ -1,9 +1,6 @@
 0 Background
-1 C
-2 O
-3 R
-4 N
-5 E
-6 L
-7 H
-8 T
+1 Thankyou
+2 Love
+3 You
+4 I'm fine
+5 How are you?
