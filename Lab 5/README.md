@@ -123,7 +123,7 @@ Try out different interactions outputs and inputs.<br/>
 **EXPERIMENTATION:** <br/> 
 **1. I tried using teachablee machines gesture model to train some basic signs like (hello, thankyou, and some alphabet letters) but the output was not really good becuas the gesture model recognises movement of particular nodes and hence it was not able to capture the hand/finger movements**<br/>
 **2. Next I tried rtraining in image model and with sign alphabets, the outputt again was not really good as most of the alphabets had similar gestures with just a difference of one finger (eg. A, E, M, N, S, T - see image below) The model was fairly okay but the pi camera's input was pixelated and hence the classification was not so good.**<br/>
-![sign.png](sign)<br/>
+![sign.png](sign.png){:height="50%" width="50%"}<br/>
 **3. Lastly I experimented with training phrases like; How are you?, I am fine, Thankyou, what is the time?, using the image classifer and it worked fairly well because of the the distinct hand movements and placements. Camera input was classified and phrase was displayed on the LED screeen on the pi.** <br/>
 
 
