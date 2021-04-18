@@ -170,4 +170,4 @@ During the lecture, we mentioned questions to help characterize a material:
 * What are other properties/behaviors of X?
 * How does X feel?
 
-**DEMO VIDEO [https://drive.google.com/file/d/1IZ3gvNv237AqRCneCwDuG9jfgXWFZiW2/view?usp=sharing]**
+**[DEMO VIDEO](https://drive.google.com/file/d/1IZ3gvNv237AqRCneCwDuG9jfgXWFZiW2/view?usp=sharing)**
