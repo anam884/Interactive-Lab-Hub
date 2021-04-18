@@ -132,16 +132,30 @@ Try out different interactions outputs and inputs.<br/>
 
 Now flight test your interactive prototype and **note your observations**:
 For example:
-1. When does it what it is supposed to do?
-1. When does it fail?
-1. When it fails, why does it fail?
-1. Based on the behavior you have seen, what other scenarios could cause problems?
+**1. When does it what it is supposed to do?<br/>**
+I only trained 5 phrases/signs for the sake of performance. It worked fine, was a bit slow in classification because the camera input has a lag but it worked okay.<br/>
+**2. When does it fail?<br/>**
+It fails when an alternate hand is used eg. (right instead of left), When the signs are somewhat overlapping eg. thankyou and I'm fine are somewhat similar just the direction of the hand is different that's why it missclasiifes sometimes. It also fails if the subject is not well lit or not rightly positioned in the frame. <br/>
+**3. When it fails, why does it fail?<br/>**
+There are a number of reasosn:
+    1. The camera quality is poor. it requires a very well lit room. The model works perfect on teachable machines output but was missclassifying becuase of thee          image quality of the pi <br/>
+    2. The model is not trained extensively. For the sake of performance I used only 40-50 images per class that's why I was not able to classify all options like        doing the same sign with both hands or side pose while doing the sign etc. hence misclassifications because of that.<br/>
+    3. The frame size while training was differnt than frame size of the pi cam <br/>
+**6. Based on the behavior you have seen, what other scenarios could cause problems?**<br/>
+    1. I am not sure but wearing a diffenet outfit might cause problem beacause when I tested it while wearing an oversized hoodie the result were not as accurate.<br/>
+    2. Doing the gesuture too fast infront of the camera, as pi cam has some lag time so doing it too fast might cause problem <br/>
+    3. A person standing vs person sitting. Since it's trained on a person doing the gestures while sitting, a differnt posture might cause problems<br/>
+    4. use of gloves<br/>
 
 **Think about someone using the system. Describe how you think this will work.**
-1. Are they aware of the uncertainties in the system?
-1. How bad would they be impacted by a miss classification?
-1. How could change your interactive system to address this?
-1. Are there optimizations you can try to do on your sense-making algorithm.
+1. Are they aware of the uncertainties in the system?<br/>
+I'll have to guide them regarding the positioning, frame adjustment and speed.<br/>
+2. How bad would they be impacted by a miss classification?<br/>
+Since the user is trying to communicate so a mis classification means mis communication and based on the mis classification they might have to repeat the signs again and again which can be frustrating.<br/>
+3. How could change your interactive system to address this?<br/>
+I can train the model more extensively with differnt hands, poses and postures. And use a better quality pi cam<br/>
+4. Are there optimizations you can try to do on your sense-making algorithm.<br/>
+I can add instruactions in the start of how to get best results to set the expectations straight <br/>
 
 ### Part D
 ### Characterize your own Observant system
@@ -156,4 +170,4 @@ During the lecture, we mentioned questions to help characterize a material:
 * What are other properties/behaviors of X?
 * How does X feel?
 
-**Include a short video demonstrating the answers to these questions.**
+**DEMO VIDEO [https://drive.google.com/file/d/1IZ3gvNv237AqRCneCwDuG9jfgXWFZiW2/view?usp=sharing]**
