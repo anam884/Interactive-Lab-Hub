@@ -163,11 +163,20 @@ I can add instruactions in the start of how to get best results to set the expec
 Now that you have experimented with one or more of these sense-making systems **characterize their behavior**.
 During the lecture, we mentioned questions to help characterize a material:
 * What can you use X for?
+  A deaf person can use it to communicate
 * What is a good environment for X?
+  A well lit room
 * What is a bad environment for X?
+  Night times or poorly lit room
 * When will X break?
+  Wehn user is not correctly positioned in the frame or has a sid profile instead od front profile
 * When it breaks how will X break?
-* What are other properties/behaviors of X?
+  Mis classification and hence mis communication  
 * How does X feel?
+  It feels cool when it works well but can be frustrating if it miss classifies continiously.
+
+### Part 2.
+**Following exploration and reflection from Part 1, finish building your interactive system, and demonstrate it in use with a video.**
+**Include a short video demonstrating the finished result.**<br/>
 
 **[DEMO VIDEO](https://drive.google.com/file/d/1IZ3gvNv237AqRCneCwDuG9jfgXWFZiW2/view?usp=sharing)**
