@@ -116,14 +116,15 @@ As a note, the global Python install contains also a PyTorch installation. That 
 
 Pick one of the models you have tried, pick a class of objects, and experiment with prototyping an interaction.
 This can be as simple as the boat detector earlier.
-Try out different interactions outputs and inputs.
-**IDEA: I wanted to make a sign language interpreter/translator using google translate as an inspiration. Just as google translate, helps 2 people communicate using the app to overcome language barrier, the idea of my prtotype was to output in text what a specific sign gesture means for someone who can't interpret sign language.**
+Try out different interactions outputs and inputs.<br/>
+**IDEA:**<br/> 
+**I wanted to make a sign language interpreter/translator using google translate as an inspiration. Just as google translate, helps 2 people communicate using the app to overcome language barrier, the idea of my prtotype was to output in text what a specific sign gesture means for someone who can't interpret sign language.**<br/> 
 
-**EXPERIMENTATION: 
-1. I tried using teachablee machines gesture model to train some basic signs like (hello, thankyou, and some alphabet letters) but the output was not really good becuas the gesture model recognises movement of particular nodes and hence it was not able to capture the hand/finger movements**
-**2. Next I tried rtraining in image model and with sign alphabets, the outputt again was not really good as most of the alphabets had similar gestures with just a difference of one finger (eg. A, E, M, N, S, T - see image below) The model was fairly okay but the pi camera's input was pixelated and hence the classification was not so good.**
-!(sign)[sign.png]
-**3. Lastly I experimented with training phrases like; How are you?, I am fine, Thankyou, what is the time?, using the image classifer and it worked fairly well because of the the distinct hand movements and placements. Camera input was classified and phrase was displayed on the LED screeen on the pi."
+**EXPERIMENTATION:** <br/> 
+**1. I tried using teachablee machines gesture model to train some basic signs like (hello, thankyou, and some alphabet letters) but the output was not really good becuas the gesture model recognises movement of particular nodes and hence it was not able to capture the hand/finger movements**<br/>
+**2. Next I tried rtraining in image model and with sign alphabets, the outputt again was not really good as most of the alphabets had similar gestures with just a difference of one finger (eg. A, E, M, N, S, T - see image below) The model was fairly okay but the pi camera's input was pixelated and hence the classification was not so good.**<br/>
+![sign.png](sign)<br/>
+**3. Lastly I experimented with training phrases like; How are you?, I am fine, Thankyou, what is the time?, using the image classifer and it worked fairly well because of the the distinct hand movements and placements. Camera input was classified and phrase was displayed on the LED screeen on the pi.** <br/>
 
 
 ### Part C
