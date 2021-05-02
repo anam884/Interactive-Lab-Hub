@@ -1,6 +1,5 @@
 import board
 import busio
-import adafruit_apds9960.apds9960
 import time
 import paho.mqtt.client as mqtt
 import uuid
@@ -15,16 +14,20 @@ import adafruit_mpr121
 
 class Game:
     def __init__(self) -> None:
-        self.p1 = None
-        self.p2 = None
-        self.counter = {"rock":"paper", "paper":"scissors","scissors":"rock"}
+        self.myMove = None
+        self.opponentMove = None
+        self.counter = {"rock":"paper", "paper":"scissors","scissors":"rock", "quit":None}
     
     def reset(self):
-        self.p1 = None
-        self.p2 = None
+        self.myMove = None
+        self.opponentMove = None
     
     def needLogic(self):
-        return self.p1 and self.p2
+        return self.opponentMove and self.myMove
+    
+    def isValidInput(self, move):
+        return move == "rock" or move == "paper" or move == "scissors" or move == "I QUIT!"
+            
 
 game = Game()
 
@@ -36,7 +39,6 @@ reset_pin = None
 
 # Config for display baudrate (default max is 24mhz):
 BAUDRATE = 64000000
-# test
 
 backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
@@ -88,11 +90,13 @@ def on_connect(client, userdata, flags, rc):
 def on_message(client, userdata, msg):
     # if a message is recieved on the colors topic, parse it and set the color
     if msg.topic == topic2:
-        opponentMove = msg.payload.decode('UTF-8')
-        print("Opponent said: " + opponentMove)
-        game.p1 = opponentMove
-    if msg.topic == topic:
-        print("I said: " + msg.payload.decode('UTF-8'))
+        opponentMove = msg.payload.decode('UTF-8').rstrip()
+        if game.isValidInput(opponentMove):
+            if opponentMove == "I QUIT!":
+                game.opponentMove = "quit"
+            else:
+                game.opponentMove = opponentMove
+            
 
 client = mqtt.Client(str(uuid.uuid1()))
 client.tls_set()
@@ -118,47 +122,62 @@ signal.signal(signal.SIGINT, handler)
 
 
 def gameLogic():
-    # print("game logic")
-    if game.p1 == game.counter[game.p2]:
-        client.publish(topic, f":(")
-    elif opponentMove == "I QUIT!":
-        client.publish(topic, f"Thanks for the games!")
-    elif game.p1 == game.p2:
-        client.publish(topic, f"DRAW")
+    if game.myMove == "quit" or game.opponentMove == "quit":
+        resImage = game.opponentMove+game.myMove+".png"
+    elif game.opponentMove == game.counter[game.myMove]:
+        client.publish(topic, ":(")
+        resImage = "winlose.png"
+    elif game.opponentMove == game.myMove:
+        client.publish(topic, "DRAW")
+        resImage = "draw.png"
+    elif game.myMove == game.counter[game.opponentMove]:
+        client.publish(topic, "Ha I win")
+        resImage = "losewin.png"
     else:
-        client.publish(topic, f"Ha I win!")
+        client.publish(topic, "you're missing an edge case dum dum")
+    
+    draw.rectangle((0, 0, width, height))
+    resIm = Image.open("imgs/"+game.opponentMove+game.myMove+".png")
+    disp.image(resIm, rotation)
     game.reset()
-
+    time.sleep(2)
+    draw.rectangle((0, 0, width, height))
+    resIm = Image.open("imgs/" + resImage)
+    disp.image(resIm, rotation)
+    time.sleep(1)
+    
 # our main loop
 while True:
     move = None
     if sensor[1].value:
         move = "rock"
         client.publish(topic, move)
-        image2 = Image.open("rock.png")
-        draw.rectangle((0, 100, width, height))
+        game.myMove = move
+        image2 = Image.open("imgs/"+"rock.png")
+        draw.rectangle((0, 0, width, height))
         disp.image(image2, rotation)
-        game.p2 = move
     if sensor[2].value:
         move = "paper"
         client.publish(topic, move)
-        image2 = Image.open("paper.png")
+        game.myMove = move
+        image2 = Image.open("imgs/"+"paper.png")
         draw.rectangle((0, 0, width, height))
         disp.image(image2, rotation)
-        game.p2 = move
     if sensor[3].value:
         move = "scissors"
         client.publish(topic, move)
-        image2 = Image.open("scissors.png")
+        game.myMove = move
+        image2 = Image.open("imgs/"+"scissors.png")
         draw.rectangle((0, 0, width, height))
         disp.image(image2, rotation)
-        game.p2 = move
     if sensor[11].value:
         move = "I QUIT!"
         client.publish(topic, move)
-        game.p2 = move
+        image2 = Image.open("imgs/"+"quit.png")
+        draw.rectangle((0, 0, width, height))
+        disp.image(image2, rotation)
     
     if game.needLogic():
         gameLogic()
 
-    time.sleep(0.25)
+    time.sleep(1)

@@ -110,8 +110,8 @@ while True:
     if sensor[1].value:
         client.publish(topic1, f"rock")
         image2 = Image.open("rock.png")
-        draw.rectangle((0, 100, width, height))
-        disp.image(image2, rotation)
+        draw.rectangle((100, 100, width, height), fill='#787677')
+        # disp.image(image2, rotation)
     if sensor[2].value:
         client.publish(topic1, f"paper")
         image2 = Image.open("paper.png")
