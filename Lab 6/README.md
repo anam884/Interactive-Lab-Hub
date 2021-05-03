@@ -80,11 +80,17 @@ Glitch is a great tool for prototyping sites, interfaces and web-apps that's wor
 
 ## Make it your own
 
+**COLLABORATIONS** 
+Antonio (am3238) and I worked together on this lab.
+
 Find at least one class (more are okay) partner, and design a distributed application together. 
 
 **1. Explain your design** For example, if you made a remote controlled banana piano, explain why anyone would want such a thing.
+We designed a digital version of rock paper scissors game that can be played over the network as in person meetups are restricted. The game is designed in a way to preserve the fun and spontaneity element of the game. A player can give his input using the touch sensor (1: paper, 2:rock, 3: scissors, 11:quit), he will see his input on the right side of the display until the second player also gives his input and as soon as both players are done selecting they see each other's input and the results after a 2 seconds pause. 
 
 **2. Diagram the architecture of the system.** Be clear to document where input, output and computation occur, and label all parts and connections. For example, where is the banana, who is the banana player, where does the sound get played, and who is listening to the banana music?
+
+![works.png](architecture)
 
 **3. Build a working prototype of the system.** Do think about the user interface: if someone encountered these bananas, would they know how to interact with them? Should they know what to expect?
 
