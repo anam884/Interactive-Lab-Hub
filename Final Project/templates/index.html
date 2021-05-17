@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
+    <link rel="stylesheet" href="static/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <strong>A & A Fashion</strong>
+        <br>
+        <button id="startBtn">Start</button>
+    </center>
+
+    <strong><span id="datetime"></span></strong >
+    <script>
+        var dt = new Date();
+        document.getElementById("datetime").innerHTML = (("0"+(dt.getMonth()+1)).slice(-2)) +"/"+ (("0"+dt.getDate()).slice(-2)) +"/"+ (dt.getFullYear()) +" "+ (("0"+dt.getHours()+1).slice(-2)) +":"+ (("0"+dt.getMinutes()+1).slice(-2));
+    </script>
+
+    <br>
+
+    <img src="static/impressions.png"/>
+    <img src="static/avg.png"/>
+
+    <br>
+    <label><strong>Impressions</strong></label>
+    <p id="imp"></p>
+    <button id='impBtn'>Refresh Impressions</button>
+
+    <br>
+
+    <label><strong>Engagements</strong></label>
+    <p id="eng"></p>
+    <button id='engBtn'>Refresh Engagements</button>
+
+    <br>
+
+
+
+
+
+<script src="static/index.js"></script>
+</body>
+</html>
