@@ -1,0 +1,8 @@
+1,orange,30,10
+2,sweater,100,12
+3,jeans,110,16
+4,shoes,200,8
+5,jacket,20,4
+6,dress,20,10
+7,green,110,22
+8,unnamed,220,22
